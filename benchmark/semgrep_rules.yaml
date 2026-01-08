@@ -1,0 +1,58 @@
+# Local Semgrep ruleset for the baseline comparison.
+# Kept offline (no registry download) so the comparison is reproducible.
+# Covers the same CWE families as the benchmark.
+rules:
+  - id: os-command-injection
+    languages: [python]
+    severity: ERROR
+    message: OS command injection
+    metadata: {cwe: "CWE-78"}
+    patterns:
+      - pattern-either:
+          - pattern: os.system(...)
+          - pattern: os.popen(...)
+          - pattern: subprocess.$F(..., shell=True, ...)
+  - id: code-injection-eval-exec
+    languages: [python]
+    severity: ERROR
+    message: Code injection via eval/exec
+    metadata: {cwe: "CWE-95"}
+    patterns:
+      - pattern-either:
+          - pattern: eval(...)
+          - pattern: exec(...)
+  - id: insecure-deserialization
+    languages: [python]
+    severity: ERROR
+    message: Insecure deserialization
+    metadata: {cwe: "CWE-502"}
+    patterns:
+      - pattern-either:
+          - pattern: pickle.loads(...)
+          - pattern: pickle.load(...)
+          - pattern: yaml.load(...)
+  - id: weak-hash
+    languages: [python]
+    severity: WARNING
+    message: Weak hash algorithm
+    metadata: {cwe: "CWE-327"}
+    patterns:
+      - pattern-either:
+          - pattern: hashlib.md5(...)
+          - pattern: hashlib.sha1(...)
+  - id: sql-string-concat
+    languages: [python]
+    severity: ERROR
+    message: SQL built with string concatenation
+    metadata: {cwe: "CWE-89"}
+    patterns:
+      - pattern-either:
+          - pattern: $CUR.execute("..." + ...)
+          - pattern: $CUR.execute("...".format(...))
+  - id: hardcoded-secret
+    languages: [python]
+    severity: WARNING
+    message: Hardcoded secret
+    metadata: {cwe: "CWE-798"}
+    patterns:
+      - pattern-regex: '(?i)(password|api_?key|secret|token)\s*=\s*["''][^"'']{5,}["'']'

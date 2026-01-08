@@ -1,0 +1,15 @@
+{"id": "CWE89_sqli_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 4, "cwe": "CWE-89"}], "code": "import sqlite3\ndef get(conn, uid):\n    q = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(q)\n"}
+{"id": "CWE78_cmdi_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-78"}], "code": "import os\ndef run():\n    os.system(input('cmd: '))\n"}
+{"id": "CWE95_eval_interproc_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-95"}], "code": "def handle():\n    data = input('x')\n    sink(data)\ndef sink(x):\n    eval(x)\n"}
+{"id": "CWE798_secret_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 1, "cwe": "CWE-798"}], "code": "password = \"hunter2SuperSecret123\"\ndef login(u):\n    return u == password\n"}
+{"id": "CWE327_md5_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 2, "cwe": "CWE-327"}], "code": "import hashlib\ndef h(x):\n    return hashlib.md5(x).hexdigest()\n"}
+{"id": "CWE369_divzero_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-369"}], "code": "def calc(a):\n    d = 0\n    return a / d\n"}
+{"id": "CWE835_infloop_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-835"}], "code": "def loop():\n    i = 0\n    while i < 5:\n        print(i)\n"}
+{"id": "CWE502_pickle_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-502"}], "code": "import pickle\ndef load(b):\n    return pickle.loads(b)\n"}
+{"id": "CWE22_pathtrav_01", "language": "Python", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-22"}], "code": "def read():\n    name = input('file')\n    return open(name).read()\n"}
+{"id": "benign_safe_sql_01", "language": "Python", "vulnerable": false, "ground_truth": [], "code": "def get(conn, uid):\n    conn.cursor().execute('SELECT * FROM u WHERE id=?', (uid,))\n"}
+{"id": "benign_sanitized_01", "language": "Python", "vulnerable": false, "ground_truth": [], "code": "import os\ndef run():\n    n = int(input('n'))\n    print(n * 2)\n"}
+{"id": "benign_clean_math_01", "language": "Python", "vulnerable": false, "ground_truth": [], "code": "def area(r):\n    pi = 3.14159\n    return pi * r * r\n"}
+{"id": "CWE120_strcpy_c_01", "language": "C", "vulnerable": true, "ground_truth": [{"line": 3, "cwe": "CWE-120"}], "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}\n"}
+{"id": "CWE78_system_c_01", "language": "C", "vulnerable": true, "ground_truth": [{"line": 2, "cwe": "CWE-78"}], "code": "void g(char *c){\n  system(c);\n}\n"}
+{"id": "benign_c_01", "language": "C", "vulnerable": false, "ground_truth": [], "code": "int add(int a, int b){\n  return a + b;\n}\n"}
