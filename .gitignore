@@ -39,3 +39,6 @@ paper/*.pdf
 paper/*.bbl
 paper/*.blg
 .pytest_cache/
+AI Code Review Assistant/
+benchmark/data/OWASP-BenchmarkJava/
+create_*.ps1
