@@ -1,4 +1,3 @@
-from collections import deque
 """
 Universal Taint Analyzer
 ========================
@@ -30,6 +29,7 @@ matters in C, ``innerHTML`` in JavaScript), while the *algorithm* is shared.
 """
 
 from __future__ import annotations
+from collections import deque
 
 from .taint_analyzer import TaintFinding, FunctionSummary
 
