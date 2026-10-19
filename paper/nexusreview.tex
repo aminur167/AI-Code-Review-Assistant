@@ -374,9 +374,17 @@ derived from the detection method (0.95 for a taint-verified flow, 0.90
 interprocedural, 0.85 for a structurally-guarded pattern, 0.70 for a
 metric threshold). Confidence is a transparency signal, never a detection
 gate. The single neural stage prompts Groq Llama-3.1-8B to explain each
-verified finding; the prompt forbids re-detection, and an offline template
-knowledge base guarantees the framework runs without a network. Findings
-export to SARIF~2.1.0~\cite{sarif}, JSON, CSV, and HTML.
+verified finding without contributing to bug discovery. We formally decouple
+detection from neural explanation: the LLM receives strictly (i) the confirmed
+vulnerability classification, (ii) the deterministic MITRE CWE identifier, and
+(iii) the backward program slice extracted from the PDG representing the exact
+causal data-and-control path. The system prompt strictly constrains the model
+from introducing, re-ranking, or hypothesizing unverified defects. Under this
+asymmetric coupling, even if the generative model experiences semantic drift,
+it cannot inject false positives into the audit log, guaranteeing zero
+hallucination in detection by architectural construction. An offline template
+knowledge base guarantees deterministic fallback when network connectivity is
+unavailable. Findings export to SARIF~2.1.0~\cite{sarif}, JSON, CSV, and HTML.
 
 %=============================================================================
 \section{Algorithms}
@@ -952,17 +960,21 @@ silently loses data-flow edges that the compiled program certainly has.
 \section{Threats to Validity}
 \textbf{Construct.} Juliet is synthetic and generated from templates, so its
 defect distribution is not that of production code; QuixBugs supplies real
-algorithmic defects but lies outside our security scope. We do not claim
-production-code accuracy from these results. \textbf{Internal.} The
-line-level true-negative definition is at line granularity, which inflates
-Accuracy; we report the full confusion matrix under both protocols so any
-metric can be recomputed. The strict-label subset excludes benign functions
+algorithmic defects but lies outside our security scope. On QuixBugs (3.66\% Recall),
+the benchmark specifically assesses algorithmic repair (e.g., off-by-one indexing,
+faulty loop invariants) rather than dataflow or taint-style vulnerabilities; we
+report this openly to delimit the exact operational frontier of our analysis.
+\textbf{Internal.} The line-level true-negative definition is at line granularity,
+which inflates Accuracy; we report the full confusion matrix under both protocols
+so any metric can be recomputed. The strict-label subset excludes benign functions
 retaining a flaw marker, and we report the unfiltered numbers beside it so
 the effect of that choice is visible. \textbf{External.} The primary
-evaluation includes third-party Java through OWASP Benchmark v1.2, but its
-servlet cases and case-level oracle are not a substitute for whole-project
-Java analysis. JavaScript remains evaluated only on the generated benchmark;
-Juliet Java and Defects4J are future work. \textbf{Scope.}
+evaluation includes third-party Java through OWASP Benchmark v1.2 (40.43\% F1).
+The residual false negatives in OWASP stem from reflective invocations
+(\texttt{Class.forName().newInstance()}), framework-mediated dependency injection,
+and complex servlet wrappers that elude syntax-level lowered representations.
+JavaScript remains evaluated only on the generated benchmark; whole-project
+inter-file analysis and Defects4J integration remain future work. \textbf{Scope.}
 Analysis is confined to a single translation unit; 82\% of Juliet's
 vulnerable cases are cross-unit and are excluded from the primary set
 rather than counted as silent misses; including them would lower recall
