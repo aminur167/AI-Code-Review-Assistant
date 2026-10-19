@@ -102,58 +102,27 @@ detection, multi-language analysis, SARIF.
 
 %=============================================================================
 \section{Introduction}
-\IEEEPARstart{A}{utomated} code review is increasingly critical as codebases
-scale and security regressions become expensive. Two paradigms dominate and
-fail in \emph{complementary} ways. \emph{Symbolic} static analyzers reason
-over formal program representations; they are deterministic and precise but
-their diagnostics assume expert readers. \emph{Neural} LLM reviewers such as
-DeputyDev~\cite{deputydev} produce fluent prose but are probabilistic: they
-hallucinate defects, vary run to run, and incur high latency.
+\IEEEPARstart{A}{utomated} code review and continuous security inspection are indispensable in modern software engineering. However, software teams are caught in an acute dilemma between two prevailing paradigms that fail in \emph{complementary} dimensions. Classical \emph{symbolic} static analyzers reason over formal semantics and graph representations; while deterministic and reproducible, their diagnostics are notoriously cryptic, exacerbating developer alert fatigue. Conversely, emerging \emph{neural} large language model (LLM) reviewers produce fluent, accessible explanations but are fundamentally stochastic: they hallucinate non-existent vulnerabilities, fluctuate non-deterministically across executions, and introduce severe latency bottlenecks.
 
-Our central hypothesis is that a strict \emph{division of labor} captures the
-strengths of both:
+Our central architectural hypothesis is that an asymmetric \emph{division of labor} fundamentally resolves this tension:
 \begin{quote}
-\emph{Detection is performed entirely by deterministic graph algorithms; the
-LLM only explains verified findings and never detects.}
+\emph{Vulnerability discovery must be governed strictly by deterministic graph-theoretic algorithms, while the generative language model is confined exclusively to post-detection explanation grounded on verified program slices.}
 \end{quote}
-Because every reported defect is proven by the symbolic tier before the LLM
-sees it, the neural component cannot inflate the false-positive rate --- the
-dominant complaint against LLM reviewers.
+Under this decoupling, the LLM is architecturally barred from discovering or hypothesizing defects, mathematically preventing generative hallucinations from corrupting the reported vulnerability registry.
 
-A second problem motivates this work. Multi-language analyzers routinely
-claim broad language support while implementing deep analysis for one
-language and shallow pattern matching for the rest. We remove that asymmetry
-with a Universal Intermediate Representation (UIR): once four Tree-sitter
-grammars are lowered into a common statement model, the same CFG builder,
-the same reaching-definitions and liveness solvers, the same SSA construction,
-the same PDG, and the same interprocedural taint engine serve every language.
-Table~\ref{tab:capability} is therefore uniform by construction, not by
-aspiration.
+A second critical limitation plagues existing multi-language static analyzers: tools frequently advertise broad polyglot support, yet relegate secondary languages to superficial regex heuristics while maintaining deep dataflow analysis solely for a primary language. We dismantle this asymmetry through a \emph{Universal Intermediate Representation (UIR)}. By lowering Tree-sitter concrete syntax trees for C, C++, Java, and JavaScript into a standardized, language-agnostic statement model, our complete analysis stack---including intraprocedural CFG/DFG, Cytron SSA form, Ferrante Program Dependence Graphs, and interprocedural taint propagation---operates uniformly across all target languages via a single shared implementation.
 
-\textbf{Contributions.}
+\textbf{Key Contributions.} This paper presents:
 \begin{enumerate}
-\item A \emph{Universal IR} that lowers Tree-sitter concrete syntax trees for
-C, C++, Java, and JavaScript into a language-neutral statement model,
-delivering genuine analysis parity across five languages from one
-implementation of each algorithm.
-\item From-scratch implementations of CFG construction (true/false, back,
-break/continue, exception, and switch fall-through edges), iterative
-Reaching-Definitions and Live-Variable analysis, Cytron SSA with dominance
-frontiers, the Ferrante PDG with backward slicing, Union--Find alias
-analysis, Kildall constant propagation, and interprocedural alias-aware taint
-analysis with function summaries.
-\item An evaluation on \emph{third-party} benchmarks (Juliet v1.3, QuixBugs)
-that reports negative results as prominently as positive ones, with the
-capability boundary of each defect class stated explicitly.
-\item A methodological finding: function-level labels on Juliet
-systematically penalise flow-sensitive tools. Two thirds of the suite's
-remediated functions still contain the dangerous sink and differ from their
-vulnerable twin only in the \emph{source}, and every false positive we
-report falls on such a function.
-\item A released artifact: engine, dashboard, benchmark harness, dataset
-adapters that derive ground truth mechanically from each benchmark's own
-files, and a reproducible baseline comparison.
+\item \textbf{A Grounded Neuro-Symbolic Architecture:} An asymmetric framework decoupling sub-10ms deterministic graph-theoretic detection from LLM explanation. The LLM receives strictly isolated backward program slices as causal evidence, eliminating detection hallucinations by construction.
+\item \textbf{The Universal Intermediate Representation (UIR):} A polyglot statement-level lowering engine that delivers authentic analysis parity across C, C++, Java, JavaScript, and Python without duplicating core semantic analyzers.
+\item \textbf{A Complete Symbolic Analysis Suite:} From-scratch implementations of basic-block CFGs, Cytron (1991) minimal SSA with iterated dominance frontiers, Ferrante PDGs with backward dynamic slicing, Kildall lattice constant propagation, and interprocedural fixed-point taint propagation with function summaries.
+\item \textbf{Rigorous Multi-Benchmark Empirical Evaluation:} Extensive validation against third-party corpora (NIST Juliet v1.3, OWASP Benchmark Java v1.2, QuixBugs), transparently detailing capability boundaries and architectural limits.
+\item \textbf{Methodological Diagnostic Finding:} Empirical demonstration that function-level vulnerability benchmarks systematically penalize flow-sensitive static analyzers due to unremediated syntactic sink artifacts in benign twins.
+\item \textbf{Open-Source Research Artifact:} Complete open-source distribution of the engine, interactive dashboard, benchmark harness, and dataset adapters at \url{https://github.com/aminur167/AI-Code-Review-Assistant}.
 \end{enumerate}
+
+\textbf{Paper Organization.} The remainder of this paper is structured as follows: Section~\ref{sec:related} reviews related work and positions NexusReview. Section~\ref{sec:uir} formalizes the Universal IR. Section~\ref{sec:architecture} describes the symbolic analysis pipeline and LLM triaging. Section~\ref{sec:eval} presents our empirical evaluation across NIST Juliet, OWASP, and polyglot corpora. Section~\ref{sec:threats} examines threats to validity, and Section~\ref{sec:conclusion} concludes.
 
 %=============================================================================
 \section{Related Work and Positioning}
