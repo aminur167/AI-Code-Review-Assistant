@@ -63,7 +63,7 @@ def to_sarif(findings: list[dict], artifact_uri: str = "input.py") -> dict:
                 "name": "NexusReview",
                 "organization": "NexusReview Research",
                 "version": TOOL_VERSION,
-                "informationUri": "https://github.com/nexusreview",
+                "informationUri": "https://github.com/aminur167/AI-Code-Review-Assistant",
                 "rules": list(rules_seen.values()),
             }},
             "results": results,

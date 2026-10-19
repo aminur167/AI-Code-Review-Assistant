@@ -1,3 +1,4 @@
+from collections import deque
 """
 Universal Taint Analyzer
 ========================
@@ -389,11 +390,11 @@ class UIRTaintAnalyzer:
         graph = cfg.graph
         state_in: dict[str, dict] = {b: {} for b in cfg.blocks}
         state_in[cfg.entry] = dict(initial_taint)
-        work = [cfg.entry]
+        work = deque([cfg.entry])
         visits: dict[str, int] = {}
 
         while work:
-            bid = work.pop(0)
+            bid = work.popleft()
             visits[bid] = visits.get(bid, 0) + 1
             if visits[bid] > self.MAX_BLOCK_VISITS:
                 continue

@@ -9,7 +9,8 @@ import json
 import sqlite3
 from contextlib import contextmanager
 
-DB_PATH = "nexus_research.db"
+from pathlib import Path as _Path
+DB_PATH = str(_Path(__file__).resolve().parent.parent / "nexus_research.db")
 
 
 @contextmanager
