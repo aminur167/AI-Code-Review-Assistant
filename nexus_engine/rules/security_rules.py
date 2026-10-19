@@ -25,7 +25,7 @@ def _entropy(s: str) -> float:
 class TaintFlowRule(RulePlugin):
     """Surfaces every verified Source->Sink taint flow as a finding."""
     rule_id = "SEC-TAINT"
-    cwe = "CWE-89"
+    cwe = "CWE-TaintFlow"
     severity = "CRITICAL"
     category = "security"
     description = "Interprocedural taint flow from untrusted source to dangerous sink"

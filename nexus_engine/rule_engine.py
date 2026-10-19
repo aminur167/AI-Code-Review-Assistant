@@ -50,7 +50,8 @@ class RulePlugin:
 
     def __init_subclass__(cls, **kw):
         super().__init_subclass__(**kw)
-        RulePlugin.registry.append(cls)
+        if cls not in RulePlugin.registry:
+            RulePlugin.registry.append(cls)
 
     def check(self, ctx: AnalysisContext) -> list[dict]:
         raise NotImplementedError

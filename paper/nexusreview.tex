@@ -37,7 +37,7 @@
 \begin{document}
 
 \title{NexusReview: A Neuro-Symbolic Static Analysis Framework Coupling
-Sub-10ms Deterministic Graph Detection with Zero-Hallucination LLM Triaging}
+Sub-10ms Deterministic Graph Detection with Provably Grounded LLM Triaging}
 
 \author{
 \IEEEauthorblockN{Md. Aminur Islam}
@@ -381,8 +381,7 @@ vulnerability classification, (ii) the deterministic MITRE CWE identifier, and
 causal data-and-control path. The system prompt strictly constrains the model
 from introducing, re-ranking, or hypothesizing unverified defects. Under this
 asymmetric coupling, even if the generative model experiences semantic drift,
-it cannot inject false positives into the audit log, guaranteeing zero
-hallucination in detection by architectural construction. An offline template
+it cannot inject false positives into the audit log, preventing detection hallucination in detection by architectural construction. An offline template
 knowledge base guarantees deterministic fallback when network connectivity is
 unavailable. Findings export to SARIF~2.1.0~\cite{sarif}, JSON, CSV, and HTML.
 
