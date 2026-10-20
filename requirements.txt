@@ -1,6 +1,12 @@
 # =============================================================================
 # NexusReview: A Neuro-Symbolic Static Analysis Framework
 # Requirements Specification
+#
+# Python version: >=3.9, <3.13
+# Note: tree-sitter-languages 1.10.2 does not build wheels for Python 3.13+.
+# Use Python 3.9 – 3.12 for full language-parser support. On Python 3.13+
+# the UIR falls back to the built-in Python `ast` module (Python-only analysis
+# is unaffected; C/C++/Java/JS lowering requires Python <3.13).
 # =============================================================================
 
 # --- Core Framework & Web Dashboard ---
@@ -10,9 +16,11 @@ plotly>=5.20.0
 pandas>=2.0.0
 graphviz>=0.20
 
-# --- Parser & Universal IR (Pinned for Tree-sitter ABI Compatibility) ---
+# --- Parser & Universal IR ---
+# tree-sitter-languages 1.10.2 requires Python <3.13 (no 3.13 wheel available).
+# Pin both packages to the last ABI-compatible set:
 tree-sitter==0.21.3
-tree-sitter-languages==1.10.2
+tree-sitter-languages==1.10.2   # Python 3.9–3.12 only
 
 # --- Neuro-Symbolic & LLM Integration ---
 groq>=0.9.0
@@ -28,5 +36,5 @@ pytest>=7.4.0
 # --- SAST Baselines & Benchmarking Harness ---
 bandit>=1.7.0          # Python SAST baseline
 flawfinder>=2.0.19     # C/C++ SAST baseline for NIST Juliet
-semgrep>=1.0.0         # Multi-language ruleset baseline
+semgrep>=1.38.0        # Multi-language ruleset baseline (native binary >=1.38)
 tabulate>=0.9.0        # Formatted console & LaTeX table exports

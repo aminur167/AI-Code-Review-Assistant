@@ -59,6 +59,13 @@ from nexus_engine.evaluator import evaluate, EvalResult
 
 _VENV_SCRIPTS = Path(sys.executable).parent
 
+# Extra script locations to probe (e.g. user-site installs on Windows where
+# the pip console-script shim lands outside the interpreter's own Scripts dir)
+_EXTRA_SCRIPT_DIRS = [
+    Path.home() / "AppData" / "Roaming" / "Python" / "Python314" / "Scripts",
+    Path.home() / "AppData" / "Local" / "Programs" / "Python" / "Python314" / "Scripts",
+]
+
 
 def _tool_cmd(module: str, exe_name: str) -> list | None:
     """
@@ -72,8 +79,13 @@ def _tool_cmd(module: str, exe_name: str) -> list | None:
     reporting a broken invocation as a measurement; ``None`` means the tool
     genuinely cannot run here.
     """
-    for cmd in ([sys.executable, "-m", module],
-                [str(_VENV_SCRIPTS / exe_name)]):
+    candidates = [
+        [sys.executable, "-m", module],
+        [str(_VENV_SCRIPTS / exe_name)],
+    ]
+    for extra_dir in _EXTRA_SCRIPT_DIRS:
+        candidates.append([str(extra_dir / exe_name)])
+    for cmd in candidates:
         try:
             r = subprocess.run(cmd + ["--version"], capture_output=True,
                                text=True, timeout=120)
@@ -255,6 +267,22 @@ def run_flawfinder(cases, tol, min_level=1):
 
 
 # ---------------------------------------------------------------------------
+# Semgrep >=1.38 ships as a native binary wrapper; the Python shim (pysemgrep)
+# must be on PATH for the wrapper to delegate to it.  Inject the known
+# user-site Scripts dir so subprocess inherits a correct PATH.
+_SEMGREP_SCRIPTS_DIR = str(
+    Path.home() / "AppData" / "Roaming" / "Python" / "Python314" / "Scripts"
+)
+
+
+def _semgrep_env() -> dict:
+    """Return an os.environ copy with the semgrep Scripts dir prepended."""
+    env = os.environ.copy()
+    env["PATH"] = _SEMGREP_SCRIPTS_DIR + os.pathsep + env.get("PATH", "")
+    return env
+
+
+# ---------------------------------------------------------------------------
 def run_semgrep(cases, tol, rules="benchmark/semgrep_rules.yaml"):
     """
     Semgrep with the released offline ruleset.
@@ -263,17 +291,22 @@ def run_semgrep(cases, tol, rules="benchmark/semgrep_rules.yaml"):
     platform. If it cannot execute, this returns ``None`` and the caller omits
     the row entirely -- an unavailable tool must never be represented by an
     invented number.
+
+    Note: Semgrep >=1.38 deprecated ``python -m semgrep`` and requires the
+    native ``semgrep`` binary.  The binary delegates to ``pysemgrep`` which
+    must also be on PATH; _semgrep_env() ensures that.
     """
     cmd0 = _tool_cmd("semgrep", "semgrep.exe")
     if cmd0 is None:
         return None
+    env = _semgrep_env()
     probe = tempfile.NamedTemporaryFile("w", suffix=".py", delete=False,
                                         encoding="utf-8")
     probe.write("import os\nos.system('ls')\n")
     probe.close()
     try:
         r = subprocess.run(cmd0 + ["--config", rules, "--json", "--quiet", probe.name],
-                           capture_output=True, text=True, timeout=180)
+                           capture_output=True, text=True, timeout=180, env=env)
         if r.returncode not in (0, 1) or not r.stdout.strip():
             return None
     except Exception:
@@ -299,7 +332,7 @@ def run_semgrep(cases, tol, rules="benchmark/semgrep_rules.yaml"):
         t0 = time.perf_counter()
         try:
             r = subprocess.run(cmd0 + ["--config", rules, "--json", "--quiet", tf.name],
-                               capture_output=True, text=True, timeout=180)
+                               capture_output=True, text=True, timeout=180, env=env)
             data = json.loads(r.stdout) if r.stdout.strip() else {}
             for item in data.get("results", []):
                 finds.append({"line": item.get("start", {}).get("line", 0),
