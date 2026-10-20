@@ -100,7 +100,7 @@ with st.sidebar:
     st.caption("Detection is 100% deterministic. The LLM only explains.")
 
 SAMPLES = {
-    "Python": '''import os, sqlite3, hashlib
+    "Python": """import os, sqlite3, hashlib
 
 API_KEY = "sk_live_51H8xSecretKey12345"
 
@@ -123,16 +123,69 @@ def poll():
     i = 0
     while i < 100:
         print(i)
-''',
-    "C": '''#include <string.h>
+""",
+    "C": """#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 void copy(char *src){
     char buf[16];
     strcpy(buf, src);
     system(src);
 }
-int main(){ char n[64]; gets(n); copy(n); }
-''',
+
+int main(){ 
+    char n[64]; 
+    gets(n); 
+    copy(n); 
+    return 0;
 }
+""",
+    "C++": """#include <iostream>
+#include <cstdlib>
+#include <cstring>
+using namespace std;
+
+void process(char *user_input) {
+    char buffer[16];
+    strcpy(buffer, user_input);
+    system(user_input);
+}
+
+int main() {
+    char input[100];
+    cin >> input;
+    process(input);
+    return 0;
+}
+""",
+    "Java": """import java.io.*;
+import java.sql.*;
+
+public class VulnerableApp {
+    public void executeQuery(Connection conn, String userId) throws SQLException {
+        String sql = "SELECT * FROM accounts WHERE id = " + userId;
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+    }
+
+    public void runCommand(String command) throws IOException {
+        Runtime.getRuntime().exec(command);
+    }
+}
+""",
+    "JavaScript": """const { exec } = require("child_process");
+
+function processCommand(cmd) {
+    eval(cmd);
+}
+
+function pingHost(host) {
+    exec("ping -c 1 " + host);
+}
+""",
+}
+
 
 # ---------------------------------------------------------------- header
 st.markdown("# 🔬 NexusReview")
@@ -153,7 +206,8 @@ with col_in:
             gt_raw = st.text_area("One per line: `line,CWE-xx`",
                                   placeholder="6,CWE-89\n14,CWE-78", height=120)
 
-    if run and code_input.strip():
+    should_run = run or ("result" not in st.session_state and bool(code_input.strip()))
+    if should_run and code_input.strip():
         with st.spinner("Running Neuro-Symbolic pipeline…"):
             pipeline = get_pipeline(use_llm)
             result = pipeline.run(code_input, language)
