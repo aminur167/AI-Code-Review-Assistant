@@ -1,0 +1,5777 @@
+[
+  {
+    "id": "cpp_cmdi_vuln_6177",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_loop_vuln_2365",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "py_secret_safe_1352",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6163",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_7891",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "js_eval_safe_7208",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "py_md5_vuln_1415",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "java_sqli_vuln_2731",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2523",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "js_innerhtml_safe_7972",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "hard_c_safe_bounded_copy_8385",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(void){\n  char src[32];\n  char dst[64];\n  snprintf(dst, sizeof(dst), \"%s\", src);\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0091",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "py_md5_safe_1628",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "java_deser_safe_4204",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "py_cmdi_safe_0396",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "java_cmdi_vuln_3343",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "java_secret_vuln_3817",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"b62c1bc3a2e55fe525\";\n}"
+  },
+  {
+    "id": "py_secret_safe_1258",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "c_cmdi_safe_5364",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "py_eval_vuln_0777",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "c_gets_safe_4988",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "py_secret_safe_1120",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "c_sprintf_vuln_5665",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "c_bof_safe_4656",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[8];\n  strncpy(b, s, sizeof(b)-1);\n}"
+  },
+  {
+    "id": "java_cmdi_safe_3324",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "py_eval_vuln_0829",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "js_innerhtml_vuln_8053",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6215",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "hard_py_pickle_indirect_8194",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\nloader = pickle.loads\ndef l(b):\n    return loader(b)\n"
+  },
+  {
+    "id": "cpp_bof_vuln_5917",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6457",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0387",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "py_pickle_safe_2528",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "js_xss_vuln_6817",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "java_deser_vuln_4361",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_7838",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6391",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_md5_safe_3710",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_md5_safe_1526",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "java_cmdi_vuln_3073",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_8078",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6383",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6213",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "c_gets_vuln_4811",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(){\n  char b[64];\n  gets(b);\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5706",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "java_md5_safe_3658",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_secret_vuln_4067",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"471dbc94b625812f8f\";\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7679",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "py_div_vuln_2023",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "c_gets_safe_4986",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7584",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "java_deser_safe_4272",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "py_div_safe_1744",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "py_loop_safe_2138",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "cpp_scanf_safe_6546",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "java_md5_vuln_3433",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_eval_safe_0896",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "py_loop_safe_2304",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "py_pickle_vuln_2629",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_eval_safe_0706",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "cpp_cmdi_safe_6128",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "cpp_bof_safe_6070",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "c_sprintf_vuln_5615",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "py_div_safe_2012",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "hard_py_safe_pickle_guarded_8315",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    data = json.loads(b)\n    return data\n"
+  },
+  {
+    "id": "hard_py_safe_md5_name_8299",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def cfg():\n    md5_disabled = True\n    return md5_disabled\n"
+  },
+  {
+    "id": "py_secret_safe_1286",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_pickle_safe_2550",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "py_md5_vuln_1467",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "hard_cpp_safe_sized_alloc_8413",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(void){\n  char *dst = new char[128];\n  char src[64];\n  strncpy(dst, src, 63);\n  dst[63] = '\\0';\n  delete [] dst;\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0247",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "java_secret_safe_4012",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "py_loop_safe_2214",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "py_md5_vuln_1437",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7491",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_deser_vuln_4233",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "py_loop_safe_2372",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "js_innerhtml_safe_8056",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_bof_safe_6064",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "js_xss_vuln_6805",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0325",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "cpp_bof_vuln_5825",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6708",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_5939",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "c_bof_vuln_4753",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "js_xss_vuln_6937",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "py_md5_vuln_1625",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "c_gets_vuln_4809",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(){\n  char b[64];\n  gets(b);\n}"
+  },
+  {
+    "id": "java_cmdi_safe_3084",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6150",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "c_gets_vuln_4905",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(){\n  char b[64];\n  gets(b);\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5411",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_div_vuln_1861",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "py_sqli_vuln_0089",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "c_bof_vuln_4447",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_div_vuln_1879",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "py_eval_vuln_0977",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "py_cmdi_vuln_0437",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "js_innerhtml_vuln_7943",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "c_bof_vuln_4525",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0383",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "py_cmdi_vuln_0543",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "cpp_scanf_vuln_6591",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "py_md5_vuln_1425",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "hard_cpp_safe_sized_alloc_8418",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(void){\n  char *dst = new char[128];\n  char src[64];\n  strncpy(dst, src, 63);\n  dst[63] = '\\0';\n  delete [] dst;\n}"
+  },
+  {
+    "id": "c_bof_vuln_4535",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_md5_safe_1678",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "py_cmdi_safe_0672",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "js_innerhtml_safe_7846",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6547",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "c_bof_vuln_4435",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "evasive_js_xss_computed_sink_8263",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function show(req, el){\n  var prop = 'inner' + 'HTML';\n  el[prop] = '<p>' + req.query.msg + '</p>';\n}"
+  },
+  {
+    "id": "java_sqli_vuln_3017",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "py_md5_vuln_1571",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "java_secret_vuln_3837",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"7fc8721e27db7da3c3\";\n}"
+  },
+  {
+    "id": "py_secret_safe_1356",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "js_eval_vuln_7197",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "cpp_bof_safe_5936",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "c_bof_vuln_4567",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_md5_vuln_1681",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "java_md5_safe_3402",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3474",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_7994",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0025",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "py_pickle_safe_2640",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "java_secret_vuln_3879",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"7a10055db87ae7cf35\";\n}"
+  },
+  {
+    "id": "py_eval_safe_0714",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "py_sqli_vuln_0145",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "cpp_scanf_vuln_6597",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "java_deser_vuln_4401",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "py_eval_safe_0806",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "py_md5_vuln_1395",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "py_sqli_safe_0032",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "java_deser_vuln_4133",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6195",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3113",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0037",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "java_md5_vuln_3651",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "c_bof_vuln_4595",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5398",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "java_sqli_safe_2892",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5300",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7567",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "js_xss_vuln_6887",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "java_md5_vuln_3733",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "cpp_bof_safe_5940",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7772",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "py_secret_safe_1316",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_md5_safe_3616",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_sqli_vuln_2931",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3446",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_7942",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6612",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "py_eval_safe_0814",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "java_md5_safe_3414",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_deser_vuln_4265",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6617",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2397",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_loop_vuln_2173",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "java_md5_vuln_3709",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "c_bof_vuln_4559",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "java_sqli_safe_2834",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "py_secret_safe_1042",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_secret_vuln_1109",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"2081f11e304c6211d8bd\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_loop_safe_2180",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "py_secret_vuln_1213",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"02fef1f0cc92f0e030ac\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_div_safe_1986",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7651",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_secret_vuln_4059",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"ef2a7a29507a870cc1\";\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5117",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "c_gets_vuln_4777",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(){\n  char b[64];\n  gets(b);\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7632",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6300",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_8121",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "cpp_bof_safe_6098",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "js_xss_safe_6824",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0677",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "py_div_vuln_2027",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "c_cmdi_vuln_5349",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_secret_vuln_4053",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"7585e6c3733d074830\";\n}"
+  },
+  {
+    "id": "java_md5_safe_3558",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6769",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "java_sqli_vuln_2851",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6289",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "js_xss_safe_7082",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "c_sprintf_vuln_5599",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0055",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6203",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "cpp_bof_safe_6120",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6759",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3169",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_eval_safe_0940",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "js_innerhtml_safe_8140",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "hard_py_secret_obfuscated_8205",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "import base64\n_blob = \"ZWQwNDVjN2RiMzY4OTI0Mw==\"\ndef go():\n    api_key = base64.b64decode(_blob).decode()\n    return api_key\n"
+  },
+  {
+    "id": "java_secret_vuln_3945",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"ec97eafbcd41b125f5\";\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7510",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "java_deser_vuln_4109",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "c_gets_safe_4954",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0317",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "java_sqli_safe_2832",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "hard_java_safe_prepared_8354",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(java.sql.Connection c, String uid) throws Exception {\n    java.sql.PreparedStatement p = c.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    p.setString(1, uid);\n    p.executeQuery();\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6308",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "cpp_bof_safe_5994",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "java_deser_vuln_4393",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "js_xss_safe_6900",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "js_eval_safe_7440",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "c_gets_vuln_5091",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(){\n  char b[64];\n  gets(b);\n}"
+  },
+  {
+    "id": "java_md5_safe_3630",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_md5_vuln_1663",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "py_secret_safe_1078",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_secret_vuln_1287",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"b5ba083de7c0d5f54a2d\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "cpp_cmdi_safe_6458",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_xss_vuln_6877",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2575",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_secret_vuln_1065",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"46c9201ac2ce6b6a331c\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_cmdi_safe_0518",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "js_eval_safe_7428",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "py_secret_vuln_1205",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"a80bf1c5e8d6ac84419d\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_pickle_vuln_2417",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_md5_safe_1384",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "py_cmdi_safe_0570",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "py_pickle_safe_2394",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "js_eval_vuln_7387",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_5905",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "js_xss_safe_7044",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2579",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "java_cmdi_safe_3354",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "c_bof_safe_4534",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[8];\n  strncpy(b, s, sizeof(b)-1);\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6500",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "py_md5_vuln_1645",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "py_eval_vuln_0815",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "c_sprintf_vuln_5695",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "py_eval_vuln_0841",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "java_sqli_vuln_3015",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3526",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_6091",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "js_eval_safe_7468",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "c_gets_safe_4914",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "py_secret_safe_1340",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_cmdi_vuln_3289",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_sqli_safe_0086",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "c_bof_safe_4432",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[8];\n  strncpy(b, s, sizeof(b)-1);\n}"
+  },
+  {
+    "id": "c_bof_safe_4430",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[8];\n  strncpy(b, s, sizeof(b)-1);\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5378",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "java_md5_vuln_3573",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2511",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_secret_safe_1332",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_cmdi_vuln_3153",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0275",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "js_eval_safe_7194",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "py_md5_vuln_1627",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "java_sqli_safe_2912",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "py_md5_safe_1674",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "py_loop_vuln_2113",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "java_deser_vuln_4089",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7592",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "js_xss_safe_7024",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "java_deser_safe_4114",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "java_secret_safe_3744",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "java_secret_safe_3776",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7725",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_secret_vuln_3775",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"7602ee11d3b63e62c2\";\n}"
+  },
+  {
+    "id": "py_loop_vuln_2069",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "py_loop_vuln_2259",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "cpp_scanf_safe_6570",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6137",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_loop_vuln_2285",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "js_eval_safe_7200",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_6105",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_7952",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7666",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "py_loop_vuln_2041",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "js_innerhtml_safe_7992",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "java_deser_vuln_4189",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "java_secret_safe_4032",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5309",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_loop_safe_2192",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "java_md5_vuln_3713",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_div_vuln_2039",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "java_secret_vuln_3747",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"8fa477bc1efe5e0014\";\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6599",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5572",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "cpp_bof_safe_5990",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "js_eval_vuln_7247",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7616",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "py_md5_safe_1484",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "cpp_scanf_safe_6728",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0159",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "js_innerhtml_vuln_8061",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "py_eval_safe_0978",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "py_sqli_vuln_0237",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "py_secret_safe_1252",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_deser_vuln_4279",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "java_md5_vuln_3511",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5678",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7624",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3215",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_sqli_safe_0090",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "py_div_vuln_1983",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "py_sqli_safe_0168",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "js_innerhtml_vuln_7991",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "py_loop_safe_2144",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "js_xss_vuln_7053",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "py_md5_safe_1692",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "c_sprintf_vuln_5725",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5666",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "c_gets_safe_5030",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5405",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3081",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0161",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "py_sqli_safe_0068",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "py_eval_safe_0888",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import ast\ndef h():\n    return ast.literal_eval(input('x'))\n"
+  },
+  {
+    "id": "java_md5_safe_3542",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3508",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3189",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "js_cmdi_safe_7560",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_8119",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "java_sqli_safe_2818",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "java_sqli_vuln_3053",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "py_md5_vuln_1545",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "py_secret_vuln_1295",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"8654a4941a18bee262c2\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_deser_vuln_4115",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "py_secret_safe_1106",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "cpp_scanf_safe_6714",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "java_cmdi_safe_3120",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "js_xss_vuln_6983",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5400",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "c_sprintf_vuln_5479",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6253",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_7853",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "java_deser_vuln_4165",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "py_loop_safe_2166",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "js_xss_vuln_7035",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "java_cmdi_vuln_3315",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "public class T {\n  void r(String u) throws Exception {\n    String cmd = request.getParameter(\"c\");\n    Runtime.getRuntime().exec(cmd);\n  }\n}"
+  },
+  {
+    "id": "py_secret_safe_1188",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_deser_safe_4276",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6542",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6433",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2691",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_md5_safe_1566",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "py_sqli_vuln_0069",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6335",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_md5_vuln_3591",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "c_gets_safe_4982",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "java_deser_safe_4152",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "hard_c_safe_bounded_copy_8381",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(void){\n  char src[32];\n  char dst[64];\n  snprintf(dst, sizeof(dst), \"%s\", src);\n}"
+  },
+  {
+    "id": "java_deser_safe_4262",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5269",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5136",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5774",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "js_xss_vuln_6989",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6514",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "js_xss_safe_7064",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5452",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2475",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "c_sprintf_safe_5462",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "js_eval_vuln_7377",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "java_cmdi_safe_3348",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5752",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "c_bof_vuln_4513",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_secret_vuln_1327",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"b64848a9946165c624c1\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_secret_safe_1110",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7591",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5406",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "c_gets_safe_4898",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7711",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_sqli_safe_2736",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "java_secret_safe_4062",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6366",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_eval_safe_7416",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "java_secret_safe_3930",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "java_deser_safe_4408",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "java_md5_vuln_3523",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"MD5\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "cpp_bof_safe_6072",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <string>\nvoid f(const std::string& s){\n  std::string b = s;\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6258",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_eval_safe_7192",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "java_md5_safe_3648",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6266",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "py_pickle_safe_2624",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "py_loop_vuln_2121",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "java_sqli_vuln_2795",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_8129",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "c_gets_safe_5036",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(){\n  char b[64];\n  fgets(b, sizeof(b), stdin);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2717",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "py_secret_vuln_1331",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"57d7e26d5538c2638d89\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_md5_safe_3466",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3520",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "hard_cpp_safe_sized_alloc_8417",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(void){\n  char *dst = new char[128];\n  char src[64];\n  strncpy(dst, src, 63);\n  dst[63] = '\\0';\n  delete [] dst;\n}"
+  },
+  {
+    "id": "js_innerhtml_safe_8112",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.textContent = x;\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5419",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_cmdi_safe_0560",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "java_sqli_vuln_3001",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "js_innerhtml_vuln_8143",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(el){\n  var x = req.body.data;\n  el.innerHTML = x;\n}"
+  },
+  {
+    "id": "py_loop_safe_2362",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "py_loop_vuln_2299",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-835",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-835"
+      }
+    ],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        print(i)\n"
+  },
+  {
+    "id": "java_cmdi_safe_3240",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_6003",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7635",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_secret_vuln_3931",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"ab76f55e552effeedd\";\n}"
+  },
+  {
+    "id": "c_sprintf_safe_5528",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "py_secret_vuln_1043",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"4c686cffeae8e95eeaad\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_div_safe_1958",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "py_secret_vuln_1337",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"2516e05c04cc86679ad8\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "java_sqli_vuln_2807",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "py_pickle_safe_2400",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7729",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0489",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "java_sqli_safe_2876",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "java_sqli_safe_2908",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    PreparedStatement ps = con.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    ps.setString(1, uid);\n  }\n}"
+  },
+  {
+    "id": "java_md5_safe_3534",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_deser_safe_4222",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "py_div_safe_1798",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "java_secret_safe_3760",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6724",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "py_pickle_safe_2506",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "cpp_scanf_safe_6658",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0333",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "java_sqli_vuln_2893",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "py_loop_safe_2370",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "js_xss_safe_7106",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "java_deser_vuln_4157",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "c_bof_vuln_4723",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "py_sqli_safe_0144",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "evasive_js_xss_computed_sink_8270",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function show(req, el){\n  var prop = 'inner' + 'HTML';\n  el[prop] = '<p>' + req.query.msg + '</p>';\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_5943",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "cpp_bof_vuln_5785",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstring>\nvoid f(char *s){\n  char b[8];\n  strcpy(b, s);\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5279",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "py_pickle_safe_2634",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import json\ndef l(b):\n    return json.loads(b)\n"
+  },
+  {
+    "id": "c_sprintf_safe_5588",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[16];\n  snprintf(b, sizeof(b), \"%s\", s);\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0067",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "py_sqli_safe_0180",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "js_xss_vuln_7127",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "java_secret_vuln_3779",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "public class T {\n  String password = \"8bb8d913441003a1fa\";\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7555",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "cpp_cmdi_safe_6146",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "py_cmdi_safe_0376",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import subprocess\ndef r(host):\n    subprocess.run(['ping', host], shell=False)\n"
+  },
+  {
+    "id": "java_cmdi_safe_3282",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "py_sqli_vuln_0285",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "import sqlite3\ndef q(conn, uid):\n    sql = \"SELECT * FROM u WHERE id=\" + uid\n    conn.cursor().execute(sql)\n"
+  },
+  {
+    "id": "js_cmdi_safe_7760",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "py_secret_safe_1328",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import os\napi_key = os.environ.get('API_KEY')\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "js_xss_vuln_6861",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-79",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-79"
+      }
+    ],
+    "code": "function f(){\n  var x = location.hash;\n  document.write(x);\n}"
+  },
+  {
+    "id": "java_deser_vuln_4263",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  },
+  {
+    "id": "cpp_cmdi_vuln_6173",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "#include <cstdlib>\nvoid r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "hard_py_cmd_partial_8175",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 5,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r(name):\n    part = 'ls '\n    full = part + name\n    os.popen(full)\n"
+  },
+  {
+    "id": "js_eval_vuln_7323",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "cpp_scanf_safe_6798",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <iostream>\n#include <string>\nvoid f(){\n  std::string b;\n  std::cin >> b;\n}"
+  },
+  {
+    "id": "java_md5_safe_3614",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "java_secret_safe_3876",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  String password = System.getenv(\"PASSWORD\");\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0649",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "java_cmdi_safe_3140",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void r() throws Exception {\n    Runtime.getRuntime().exec(new String[]{\"ping\", \"host\"});\n  }\n}"
+  },
+  {
+    "id": "py_loop_safe_2096",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "cpp_scanf_vuln_6475",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5249",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "js_eval_vuln_7477",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "js_eval_safe_7198",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var n = JSON.parse(req.query.c);\n  return n;\n}"
+  },
+  {
+    "id": "java_deser_safe_4198",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "py_loop_safe_2308",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def p():\n    i = 0\n    while i < 9:\n        i += 1\n"
+  },
+  {
+    "id": "js_cmdi_safe_7600",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "js_eval_vuln_7165",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "function f(){\n  var code = req.query.c;\n  eval(code);\n}"
+  },
+  {
+    "id": "py_sqli_safe_0314",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "cpp_cmdi_safe_6236",
+    "language": "C++",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "#include <cstdlib>\nvoid r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "py_pickle_vuln_2461",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "import pickle\ndef l(b):\n    return pickle.loads(b)\n"
+  },
+  {
+    "id": "c_cmdi_safe_5164",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "py_md5_vuln_1383",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "js_xss_safe_7114",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6505",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "hard_c_safe_validated_exec_8399",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(int sel){\n  const char *cmds[] = {\"/bin/ls\", \"/bin/date\"};\n  if (sel == 0 || sel == 1) {\n    execl(cmds[sel], cmds[sel], (char *)0);\n  }\n}"
+  },
+  {
+    "id": "js_cmdi_vuln_7655",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "py_div_vuln_1975",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "py_sqli_safe_0170",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import sqlite3\ndef q(conn, uid):\n    conn.cursor().execute(\"SELECT * FROM u WHERE id=?\", (uid,))\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7529",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "cpp_scanf_vuln_6483",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "c_cmdi_vuln_5263",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 2,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "void r(char *c){\n  system(c);\n}"
+  },
+  {
+    "id": "java_md5_safe_3678",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "py_div_safe_2038",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "js_xss_safe_7090",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "py_div_safe_2022",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "c_sprintf_vuln_5607",
+    "language": "C",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "void f(char *s){\n  char b[16];\n  sprintf(b, \"%s\", s);\n}"
+  },
+  {
+    "id": "py_cmdi_vuln_0469",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "cpp_scanf_vuln_6681",
+    "language": "C++",
+    "vulnerable": true,
+    "vulnerability_class": "Class 2: Memory & Buffer Safety",
+    "cwe": "CWE-120",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-120"
+      }
+    ],
+    "code": "#include <cstdio>\nvoid f(){\n  char b[16];\n  scanf(\"%s\", b);\n}"
+  },
+  {
+    "id": "java_deser_safe_4352",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "c_bof_safe_4588",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void f(char *s){\n  char b[8];\n  strncpy(b, s, sizeof(b)-1);\n}"
+  },
+  {
+    "id": "java_md5_safe_3408",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  byte[] h(byte[] d) throws Exception {\n    return MessageDigest.getInstance(\"SHA-256\").digest(d);\n  }\n}"
+  },
+  {
+    "id": "hard_java_safe_prepared_8356",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  void q(java.sql.Connection c, String uid) throws Exception {\n    java.sql.PreparedStatement p = c.prepareStatement(\"SELECT * FROM u WHERE id=?\");\n    p.setString(1, uid);\n    p.executeQuery();\n  }\n}"
+  },
+  {
+    "id": "py_div_vuln_1933",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-369",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-369"
+      }
+    ],
+    "code": "def f(a):\n    d = 0\n    return a / d\n"
+  },
+  {
+    "id": "py_div_safe_1810",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "def f(a, d):\n    if d == 0:\n        return 0\n    return a / d\n"
+  },
+  {
+    "id": "js_cmdi_safe_7618",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.execFile('ls', [name]);\n}"
+  },
+  {
+    "id": "py_eval_vuln_0995",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "py_eval_vuln_1015",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-95",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-95"
+      }
+    ],
+    "code": "def h():\n    d = input('x')\n    eval(d)\n"
+  },
+  {
+    "id": "js_cmdi_vuln_7783",
+    "language": "JavaScript",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "const cp = require('child_process');\nfunction r(name){\n  cp.exec('ls ' + name);\n}"
+  },
+  {
+    "id": "java_deser_safe_4212",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "java_sqli_vuln_2777",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-89",
+    "ground_truth": [
+      {
+        "line": 4,
+        "cwe": "CWE-89"
+      }
+    ],
+    "code": "public class T {\n  void q(String uid) throws Exception {\n    String sql = \"SELECT * FROM u WHERE id=\" + uid;\n    stmt.executeQuery(sql);\n  }\n}"
+  },
+  {
+    "id": "c_cmdi_safe_5134",
+    "language": "C",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "void r(){\n  execl(\"/bin/ls\", \"ls\", NULL);\n}"
+  },
+  {
+    "id": "js_xss_safe_6964",
+    "language": "JavaScript",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "function f(){\n  var x = location.hash;\n  document.body.textContent = x;\n}"
+  },
+  {
+    "id": "py_secret_vuln_1133",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-798",
+    "ground_truth": [
+      {
+        "line": 1,
+        "cwe": "CWE-798"
+      }
+    ],
+    "code": "api_key = \"e3775be91baba53d5173\"\ndef go():\n    return api_key\n"
+  },
+  {
+    "id": "py_cmdi_vuln_0401",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-78",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-78"
+      }
+    ],
+    "code": "import os\ndef r():\n    os.system(input('c'))\n"
+  },
+  {
+    "id": "py_md5_vuln_1557",
+    "language": "Python",
+    "vulnerable": true,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "CWE-327",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-327"
+      }
+    ],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.md5(x).hexdigest()\n"
+  },
+  {
+    "id": "java_deser_safe_4254",
+    "language": "Java",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "public class T {\n  Object l(String in) {\n    return new com.google.gson.Gson().fromJson(in, Data.class);\n  }\n}"
+  },
+  {
+    "id": "py_md5_safe_1660",
+    "language": "Python",
+    "vulnerable": false,
+    "vulnerability_class": "Class 3: Logic, Crypto & Bad Practice",
+    "cwe": "Unknown",
+    "ground_truth": [],
+    "code": "import hashlib\ndef d(x):\n    return hashlib.sha256(x).hexdigest()\n"
+  },
+  {
+    "id": "java_deser_vuln_4177",
+    "language": "Java",
+    "vulnerable": true,
+    "vulnerability_class": "Class 1: Injection & Taint-Flow",
+    "cwe": "CWE-502",
+    "ground_truth": [
+      {
+        "line": 3,
+        "cwe": "CWE-502"
+      }
+    ],
+    "code": "public class T {\n  Object l(InputStream in) throws Exception {\n    return new ObjectInputStream(in).readObject();\n  }\n}"
+  }
+]
